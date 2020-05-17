@@ -24,7 +24,7 @@ async function robot() {
 	  /*let query
 
       if (sentenceIndex === 0) {
-        query = `${content.searchTerm}`
+        query = `${content.searc hTerm}`
       } else {
         query = `${content.searchTerm} ${content.sentences[sentenceIndex].keywords[0]}`
       }
