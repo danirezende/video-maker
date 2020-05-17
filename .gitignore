@@ -84,6 +84,7 @@ credentials/*.json
 # Content file
 content.json
 content/*.png
+content/*.jpg
 
 # Nuxt.js build / generate output
 .nuxt
