@@ -1,4 +1,4 @@
-//const imageDownloader = require('image-downloader')
+const imageDownloader = require('image-downloader')
 const google = require('googleapis').google
 const customSearch = google.customsearch('v1')
 const state = require('./state.js')
@@ -10,7 +10,7 @@ async function robot() {
   const content = state.load()
 
   await fetchImagesOfAllSentences(content)
-  //await downloadAllImages(content)
+  await downloadAllImages(content)
 
   state.save(content)
 
@@ -54,7 +54,7 @@ async function robot() {
     return imagesUrl
   }
   
-/*
+
   async function downloadAllImages(content) {
     content.downloadedImages = []
 
@@ -71,10 +71,12 @@ async function robot() {
 
           await downloadAndSave(imageUrl, `${sentenceIndex}-original.png`)
           content.downloadedImages.push(imageUrl)
-          console.log(`> [image-robot] [${sentenceIndex}][${imageIndex}] Image successfully downloaded: ${imageUrl}`)
+          //console.log(`> [image-robot] [${sentenceIndex}][${imageIndex}] Image successfully downloaded: ${imageUrl}`)
+		  console.log(`> [${sentenceIndex}][${imageIndex}] Image successfully downloaded: ${imageUrl}`)
           break
         } catch(error) {
-          console.log(`> [image-robot] [${sentenceIndex}][${imageIndex}] Error (${imageUrl}): ${error}`)
+          //console.log(`> [image-robot] [${sentenceIndex}][${imageIndex}] Error (${imageUrl}): ${error}`)
+		  console.log(`> [${sentenceIndex}][${imageIndex}] Error (${imageUrl}): ${error}`)
         }
       }
     }
@@ -85,7 +87,7 @@ async function robot() {
       url: url,
       dest: `./content/${fileName}`
     })
-  }*/
+  }
 
 }
 
