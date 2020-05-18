@@ -8,7 +8,7 @@ const rootPath = path.resolve(__dirname, '..')
 const fromRoot = relPath => path.resolve(rootPath, relPath)
 
 async function robot() {
-  //console.log('> [video-robot] Starting...')
+  console.log('> [video-robot] Starting...')
   const content = state.load()
 
   await convertAllImages(content)
